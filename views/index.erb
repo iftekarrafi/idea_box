@@ -13,7 +13,7 @@
     <form action='/' method='POST'>
       <p>
         <p style= "text-align: center;">
-        Your Idea:
+        Submit An Idea:
       </p>
       <p style= "text-align: center;">
       <input type='text' name='idea_title'/><br/>
@@ -21,7 +21,7 @@
       <input type='submit'/>
     </form>
     <h3>
-      <p>Existing Ideas</p>
+      <p><img src="/idea.png"></p>
     </h3>
     <ul>
       <% ideas.each_with_index do |idea, index| %>
@@ -30,7 +30,7 @@
         <%= idea.description %>
         <form action='/<%= index %>' method='POST'>
           <input type="hidden" name="_method" value="DELETE">
-          <input type='submit' value="Delete!"/>
+          <input type='submit' value="Clear"/>
         </form>
       </li>
       <%end%>
