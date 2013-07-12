@@ -4,6 +4,7 @@
     <p style= "text-align: center;">
     <title>IdeaBox</title>
   </head>
+  <body style='background: #4DC4BC'>
   <body>
     <h1>
       <p style="text-align: center;">IdeaBox</p>
@@ -18,14 +19,20 @@
       <textarea name='idea_description'></textarea><br/>
       <input type='submit'/>
     </form>
+     <p style="text-align: center;"</p>
+    <img src=http://www.shenaniganbooks.com/sites/default/files/Ideabox_logo.jpg></a>
     <h3>
       <p style="text-align: center;">Existing Ideas</p>
     </h3>
     <ul>
-      <% ideas.each do |idea| %>
+      <% ideas.each_with_index do |idea, index| %>
       <li>
         <%= idea.title %><br/>
         <%= idea.description %>
+        <form action='/<%= index %>' method='POST'>
+          <input type="hidden" name="_method" value="DELETE">
+          <input type='submit' value="Delete!"/>
+        </form>
       </li>
       <%end%>
     </ul>
