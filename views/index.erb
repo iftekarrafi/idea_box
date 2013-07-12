@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <p style= "text-align: center;">
+    <title>IdeaBox</title>
+  </head>
+  <body>
+    <h1>
+      <p style="text-align: center;">IdeaBox</p>
+    </h1>
+    <form action='/' method='POST'>
+      <p>
+        <p style= "text-align: center;">
+        Your Idea:
+      </p>
+      <p style= "text-align: center;">
+      <input type='text' name='idea_title'/><br/>
+      <textarea name='idea_description'></textarea><br/>
+      <input type='submit'/>
+    </form>
+    <h3>
+      <p style="text-align: center;">Existing Ideas</p>
+    </h3>
+    <ul>
+      <% ideas.each do |idea| %>
+      <li>
+        <%= idea.title %><br/>
+        <%= idea.description %>
+      </li>
+      <%end%>
+    </ul>
+  </body>
+</html>
